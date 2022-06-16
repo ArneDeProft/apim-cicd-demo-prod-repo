@@ -33,6 +33,6 @@ jobs:
         with:
           subscriptionId: aebdeb76-4daf-46f0-9d61-c3a7abea0116
           resourceGroupName: rg-demo-ecb
-          template: ${{ github.workspace }}/apim-devops-toolkit-demo-apis.template.json
+          template: ${{ github.workspace }}/master.json
           deploymentMode: Validate
           parameters: apimServiceName=apim-devops-toolkit-demo-prod    
