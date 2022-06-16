@@ -12,7 +12,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "relativePath": "${{ github.workspace }}/apim-devops-toolkit-demo-globalServicePolicy.template.json"
+          "relativePath": "/apim-devops-toolkit-demo-globalServicePolicy.template.json"
         }
       }
     },{
@@ -22,7 +22,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "relativePath": "${{ github.workspace }}/apim-devops-toolkit-demo-apis.template.json"
+          "relativePath": "/apim-devops-toolkit-demo-apis.template.json"
         }
       }
     },{
@@ -32,7 +32,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "relativePath": "${{ github.workspace }}/basic-calculator/apim-devops-toolkit-demo-basic-calculator-api.template.json"
+          "relativePath": "/basic-calculator/apim-devops-toolkit-demo-basic-calculator-api.template.json"
         }
       }
     },{
@@ -42,7 +42,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "relativePath": "${{ github.workspace }}/basic-calculator/apim-devops-toolkit-demo-globalServicePolicy.template.json"
+          "relativePath": "/basic-calculator/apim-devops-toolkit-demo-globalServicePolicy.template.json"
         }
       }
     }
