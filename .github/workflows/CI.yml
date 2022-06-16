@@ -29,6 +29,12 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      - name: list files
+        run: ls
+        
+      - name: current path
+        run: wd
+
       - uses: azure/arm-deploy@v1
         with:
           subscriptionId: aebdeb76-4daf-46f0-9d61-c3a7abea0116
