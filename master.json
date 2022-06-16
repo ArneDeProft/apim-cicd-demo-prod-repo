@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "functions": [],
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2021-04-01",
+      "name": "childLinked",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "apim-devops-toolkit-demo-globalServicePolicy.template.json"
+        }
+      }
+    },{
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2021-04-01",
+      "name": "childLinked",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "apim-devops-toolkit-demo-apis.template.json"
+        }
+      }
+    },{
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2021-04-01",
+      "name": "childLinked",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "basic-calculator/apim-devops-toolkit-demo-basic-calculator-api.template.json"
+        }
+      }
+    },{
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2021-04-01",
+      "name": "childLinked",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "basic-calculator/apim-devops-toolkit-demo-globalServicePolicy.template.json"
+        }
+      }
+    }
+  ],
+  "outputs": {}
+}
