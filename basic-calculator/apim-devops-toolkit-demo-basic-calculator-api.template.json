@@ -1,0 +1,176 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apimServiceName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "name": "[concat(parameters('apimServiceName'), '/basic-calculator')]",
+      "dependsOn": [],
+      "properties": {
+        "description": "Arithmetics is just a call away!",
+        "authenticationSettings": {
+          "subscriptionKeyRequired": false
+        },
+        "subscriptionKeyParameterNames": {
+          "header": "Ocp-Apim-Subscription-Key",
+          "query": "subscription-key"
+        },
+        "apiRevision": "1",
+        "isCurrent": true,
+        "subscriptionRequired": true,
+        "displayName": "Basic Calculator",
+        "serviceUrl": "http://calcapi.cloudapp.net/api",
+        "path": "",
+        "protocols": [
+          "http"
+        ]
+      }
+    },
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "name": "[concat(parameters('apimServiceName'), '/basic-calculator/62aafb15fffee3ae4c342cee')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'basic-calculator')]"
+      ],
+      "properties": {
+        "displayName": "Add two integers",
+        "method": "GET",
+        "urlTemplate": "/add?a={a}&b={b}",
+        "description": "Produces a sum of two numbers.",
+        "templateParameters": [
+          {
+            "name": "a",
+            "description": "First operand. Default value is <code>51</code>.",
+            "defaultValue": "51",
+            "required": true,
+            "values": [
+              "51"
+            ]
+          },
+          {
+            "name": "b",
+            "description": "Second operand. Default value is <code>49</code>.",
+            "defaultValue": "49",
+            "required": true,
+            "values": [
+              "49"
+            ]
+          }
+        ],
+        "responses": []
+      }
+    },
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "name": "[concat(parameters('apimServiceName'), '/basic-calculator/62aafb15fffee3ae4c342cf1')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'basic-calculator')]"
+      ],
+      "properties": {
+        "displayName": "Divide two integers",
+        "method": "GET",
+        "urlTemplate": "/div?a={a}&b={b}",
+        "description": "Produces a quotient of two numbers.",
+        "templateParameters": [
+          {
+            "name": "a",
+            "description": "First operand. Default value is <code>51</code>.",
+            "defaultValue": "51",
+            "required": true,
+            "values": [
+              "51"
+            ]
+          },
+          {
+            "name": "b",
+            "description": "Second operand. Default value is <code>49</code>.",
+            "defaultValue": "49",
+            "required": true,
+            "values": [
+              "49"
+            ]
+          }
+        ],
+        "responses": []
+      }
+    },
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "name": "[concat(parameters('apimServiceName'), '/basic-calculator/62aafb15fffee3ae4c342cf0')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'basic-calculator')]"
+      ],
+      "properties": {
+        "displayName": "Multiply two integers",
+        "method": "GET",
+        "urlTemplate": "/mul?a={a}&b={b}",
+        "description": "Produces a product of two numbers.",
+        "templateParameters": [
+          {
+            "name": "a",
+            "description": "First operand. Default value is <code>51</code>.",
+            "defaultValue": "51",
+            "required": true,
+            "values": [
+              "51"
+            ]
+          },
+          {
+            "name": "b",
+            "description": "Second operand. Default value is <code>49</code>.",
+            "defaultValue": "49",
+            "required": true,
+            "values": [
+              "49"
+            ]
+          }
+        ],
+        "responses": []
+      }
+    },
+    {
+      "apiVersion": "2021-08-01",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "name": "[concat(parameters('apimServiceName'), '/basic-calculator/62aafb15fffee3ae4c342cef')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('apimServiceName'), 'basic-calculator')]"
+      ],
+      "properties": {
+        "displayName": "Subtract two integers",
+        "method": "GET",
+        "urlTemplate": "/sub?a={a}&b={b}",
+        "description": "Produces a difference between two numbers.",
+        "templateParameters": [
+          {
+            "name": "a",
+            "description": "First operand. Default value is <code>51</code>.",
+            "defaultValue": "51",
+            "required": true,
+            "values": [
+              "51"
+            ]
+          },
+          {
+            "name": "b",
+            "description": "Second operand. Default value is <code>49</code>.",
+            "defaultValue": "49",
+            "required": true,
+            "values": [
+              "49"
+            ]
+          }
+        ],
+        "responses": []
+      }
+    }
+  ]
+}
