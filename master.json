@@ -8,7 +8,7 @@
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2021-04-01",
-      "name": "childLinked",
+      "name": "global-policy",
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -18,7 +18,7 @@
     },{
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2021-04-01",
-      "name": "childLinked",
+      "name": "apis",
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -28,7 +28,7 @@
     },{
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2021-04-01",
-      "name": "childLinked",
+      "name": "calculator",
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -38,7 +38,7 @@
     },{
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2021-04-01",
-      "name": "childLinked",
+      "name": "globalPolicy-calculator",
       "properties": {
         "mode": "Incremental",
         "templateLink": {
