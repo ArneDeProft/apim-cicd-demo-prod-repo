@@ -39,5 +39,5 @@ jobs:
         with:
           subscriptionId: aebdeb76-4daf-46f0-9d61-c3a7abea0116
           resourceGroupName: rg-demo-ecb
-          template: master.json
+          template: ${{ GITHUB_WORKSPACE }}/master.json
           deploymentMode: Validate
