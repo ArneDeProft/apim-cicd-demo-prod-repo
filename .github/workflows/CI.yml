@@ -31,8 +31,8 @@ jobs:
 
       - uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
-          resourceGroupName: ${{ secrets.RESOURCEGROUP_NAME }}
+          subscriptionId: aebdeb76-4daf-46f0-9d61-c3a7abea0116
+          resourceGroupName: rg-demo-ecb
           template: $GITHUB_WORKSPACE\apim-devops-toolkit-demo-apis.template.json
           deploymentMode: Validate
           
