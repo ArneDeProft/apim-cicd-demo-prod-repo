@@ -35,4 +35,4 @@ jobs:
           resourceGroupName: rg-demo-ecb
           template: ${{ github.workspace }}/apim-devops-toolkit-demo-apis.template.json
           deploymentMode: Validate
-          parameters: ApimServiceName=apim-devops-toolkit-demo-prod    
+          parameters: apimServiceName=apim-devops-toolkit-demo-prod    
