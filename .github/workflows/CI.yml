@@ -31,6 +31,7 @@ jobs:
 
       - uses: azure/arm-deploy@v1
         with:
+          working-directory: ${{ github.workspace }}
           subscriptionId: aebdeb76-4daf-46f0-9d61-c3a7abea0116
           resourceGroupName: rg-demo-ecb
           template: ${{ github.workspace }}/master.json
