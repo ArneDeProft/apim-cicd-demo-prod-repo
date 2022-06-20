@@ -24,7 +24,7 @@
         "apiRevision": "1",
         "isCurrent": true,
         "subscriptionRequired": true,
-        "displayName": "Basic_Calculator",
+        "displayName": "Basic Calculator",
         "serviceUrl": "http://calcapi.cloudapp.net/api",
         "path": "",
         "protocols": [

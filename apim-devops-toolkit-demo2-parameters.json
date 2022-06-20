@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "apimServiceName": {
-      "value": "apim-devops-toolkit-demo-prod2"
+      "value": "apim-devops-toolkit-demo-prod4"
     }
   },
   "resources": []
