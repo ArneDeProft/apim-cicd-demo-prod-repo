@@ -2,64 +2,76 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "repoBaseUrl":{"type":"string"}},
-    "ApimServiceName":{"type":"string"}}
+    "repoBaseUrl": {
+      "type": "string"
+    },
+    "ApimServiceName": {
+      "type": "string"
+    }
+  },
+
   "functions": [],
   "variables": {},
-  "resources": [
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2021-04-01",
-      "name": "global-policy",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(parameters('repoBaseUrl'), '/apim-devops-toolkit-demo-globalServicePolicy.template.json')]"
-        },
-              "parameters": {
-                "ApimServiceName": {"value": "[parameters('ApimServiceName')]" }
-        }
-      }
-    },{
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2021-04-01",
-      "name": "apis",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(parameters('repoBaseUrl'), '/apim-devops-toolkit-demo-apis.template.json')]"
-        },
-              "parameters": {
-                "ApimServiceName": {"value": "[parameters('ApimServiceName')]" }
-        }
-      }
-    },{
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2021-04-01",
-      "name": "calculator",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(parameters('repoBaseUrl'), '/basic-calculator/apim-devops-toolkit-demo-basic-calculator-api.template.json')]"
-        },
-              "parameters": {
-                "ApimServiceName": {"value": "[parameters('ApimServiceName')]" }
-        }
-      }
-    },{
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2021-04-01",
-      "name": "globalPolicy-calculator",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[concat(parameters('repoBaseUrl'), '/basic-calculator/apim-devops-toolkit-demo-globalServicePolicy.template.json')]"
-        },
-              "parameters": {
-                "ApimServiceName": {"value": "[parameters('ApimServiceName')]" }
+  "resources": [{
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2021-04-01",
+    "name": "global-policy",
+    "properties": {
+      "mode": "Incremental",
+      "templateLink": {
+        "uri": "[concat(parameters('repoBaseUrl'), '/apim-devops-toolkit-demo-globalServicePolicy.template.json')]"
+      },
+      "parameters": {
+        "ApimServiceName": {
+          "value": "[parameters('ApimServiceName')]"
         }
       }
     }
-  ],
+  }, {
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2021-04-01",
+    "name": "apis",
+    "properties": {
+      "mode": "Incremental",
+      "templateLink": {
+        "uri": "[concat(parameters('repoBaseUrl'), '/apim-devops-toolkit-demo-apis.template.json')]"
+      },
+      "parameters": {
+        "ApimServiceName": {
+          "value": "[parameters('ApimServiceName')]"
+        }
+      }
+    }
+  }, {
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2021-04-01",
+    "name": "calculator",
+    "properties": {
+      "mode": "Incremental",
+      "templateLink": {
+        "uri": "[concat(parameters('repoBaseUrl'), '/basic-calculator/apim-devops-toolkit-demo-basic-calculator-api.template.json')]"
+      },
+      "parameters": {
+        "ApimServiceName": {
+          "value": "[parameters('ApimServiceName')]"
+        }
+      }
+    }
+  }, {
+    "type": "Microsoft.Resources/deployments",
+    "apiVersion": "2021-04-01",
+    "name": "globalPolicy-calculator",
+    "properties": {
+      "mode": "Incremental",
+      "templateLink": {
+        "uri": "[concat(parameters('repoBaseUrl'), '/basic-calculator/apim-devops-toolkit-demo-globalServicePolicy.template.json')]"
+      },
+      "parameters": {
+        "ApimServiceName": {
+          "value": "[parameters('ApimServiceName')]"
+        }
+      }
+    }
+  }],
   "outputs": {}
 }
