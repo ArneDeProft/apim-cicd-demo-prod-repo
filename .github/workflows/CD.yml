@@ -26,7 +26,7 @@ jobs:
       - uses: azure/arm-deploy@v1
         with:
           subscriptionId: aebdeb76-4daf-46f0-9d61-c3a7abea0116
-          resourceGroupName: rg-demo-ecb
+          resourceGroupName: rg-demo-ecb-cicd
           template: ${{ env.GITHUB_WORKSPACE }}master.json
           deploymentMode: Incremental
-          parameters: repoBaseUrl=https://raw.githubusercontent.com/ArneDeProft/apim-cicd-demo-prod-repo/main ApimServiceName=apim-devops-toolkit-demo-prod2
+          parameters: repoBaseUrl=https://raw.githubusercontent.com/ArneDeProft/apim-cicd-demo-prod-repo/main ApimServiceName=apim-devops-toolkit-demo-prod4
