@@ -46,4 +46,4 @@ jobs:
           resourceGroupName: rg-demo-ecb
           template: ${{ env.GITHUB_WORKSPACE }}master.json
           deploymentMode: Validate
-          parameters: repoBaseUrl=https://raw.githubusercontent.com/ArneDeProft/apim-cicd-demo-prod-repo/main
+          parameters: repoBaseUrl=https://raw.githubusercontent.com/ArneDeProft/apim-cicd-demo-prod-repo/main ApimServiceName=apim-devops-toolkit-demo-prod
