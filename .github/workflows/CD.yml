@@ -29,4 +29,4 @@ jobs:
           resourceGroupName: rg-demo-ecb-cicd
           template: ${{ env.GITHUB_WORKSPACE }}master.json
           deploymentMode: Complete
-          parameters: repoBaseUrl=https://raw.githubusercontent.com/ArneDeProft/apim-cicd-demo-prod-repo/main ApimServiceName=apim-devops-toolkit-demo-prod3
+          parameters: repoBaseUrl=https://raw.githubusercontent.com/ArneDeProft/apim-cicd-demo-prod-repo/main ApimServiceName=apim-devops-toolkit-demo-prod4
