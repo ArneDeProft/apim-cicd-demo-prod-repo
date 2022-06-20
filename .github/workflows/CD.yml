@@ -1,0 +1,32 @@
+name: CD
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}      
+
+      - uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: aebdeb76-4daf-46f0-9d61-c3a7abea0116
+          resourceGroupName: rg-demo-ecb
+          template: ${{ env.GITHUB_WORKSPACE }}master.json
+          deploymentMode: Incremental
+          parameters: repoBaseUrl=https://raw.githubusercontent.com/ArneDeProft/apim-cicd-demo-prod-repo/main ApimServiceName=apim-devops-toolkit-demo-prod2
